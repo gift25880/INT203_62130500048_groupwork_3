@@ -29,7 +29,8 @@
                 <h1 class="font-bold text-3xl text-center text-white">Menu Gallery ({{ photoAmount }})</h1>
             </div>
             <div v-for="(photo,index) in gallery" class="flex bg-white rounded-xl my-8 w-5/12 mx-auto items-center">
-                <i class="fas fa-heart text-red-500 text-xl ml-10" v-show="photo.click"></i>
+                <i class="fas fa-heart text-red-500 text-xl ml-10" v-if="photo.click"></i>
+                <i class="far fa-heart text-xl ml-10" v-else></i>
                 <img :src="photo.img" class="w-4/12" v-on:click="imgClicked(index)">
                 <p class="text-xl font-medium"> {{ photo.menuTitle }}</p>
             </div>
